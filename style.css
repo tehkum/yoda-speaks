@@ -1,0 +1,42 @@
+body {
+    margin: 0; 
+    padding: 0;
+}
+textarea {
+    width: 40%;
+    display: block;
+    margin: 20px;
+    margin-left: 29%;
+    padding: 10px;
+    height: 130px;
+
+}
+#btn-input {
+    margin: 0px 0px 0px 48%;
+    display: inline-block;
+    background-color: yellowgreen;
+    border:none;
+    padding: 5px 4px 5px 4px;
+    border-radius: 10px;
+    color: white; 
+}
+.txt {
+    margin-left: 29%;
+    margin-top: 20px;
+    font-size: larger;
+}
+#txt-output {
+    width: 40%;
+    height: 130px;
+    margin: 20px;
+    margin-left: 29%;
+    padding: 10px;
+    border: .5px solid black;
+}
+.head {
+    display: block;
+    color: white;
+    background-color: yellowgreen;
+    padding: 20px;
+    text-align: center;
+}
