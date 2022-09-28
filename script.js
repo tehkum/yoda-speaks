@@ -26,4 +26,4 @@ let apiUrl= "https://api.funtranslations.com/translate/yoda.json"
         .catch(errorHandler)
     };
 
-    txtOutput.addEventListener("click", clickHandler)
+    btnInput.addEventListener("click", clickHandler)
