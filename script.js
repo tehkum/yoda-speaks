@@ -2,18 +2,28 @@ var btnInput = document.querySelector("#btn-input");
 var txtInput = document.querySelector("#txt-input");
 var txtOutput = document.querySelector("#txt-output");
 
-    function errorHandler(error)
-    {
-        console.error("server down")
+let apiUrl= "https://api.funtranslations.com/translate/yoda.json"
+    
+    function getUrlText(text){
+        return apiUrl + "?" + "text=" + text
     }
-    function getUrlText(text)
-    {
-        return "https://api.funtranslations.com/translate/yoda.json?text="+text;
+
+    function errorHandler(error){
+        console.error("server down", error);
+        alert("something went wrong");
     }
-    function clickHandler()
-    {
-        fetch(getUrlText(txtInput.value))
+
+
+    function clickHandler() {
+        var innerText = txtInput.value;
+        
+        fetch(getUrlText(innerText))
         .then(response => response.json())
-        .then(json => txtOutput.innerText = json.contents.translated)
-    }
-    txtOutput.addEventListener("click",clickHandler);
+        .then(json => { 
+            var translateHandler = json.contents.translated;
+            txtOutput.innerText = translateHandler;
+        })
+        .catch(errorHandler)
+    };
+
+    txtOutput.addEventListener("click", clickHandler)
